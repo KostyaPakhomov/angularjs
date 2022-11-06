@@ -1,0 +1,51 @@
+<some-1></some-1>
+<div class="content-view__ctrls">
+  <form>
+    <label
+      >Order:
+      <select
+        ng-disabled="dataFilter.length === 0"
+        ng-model="select"
+        ng-change="changeSelect(select)"
+      >
+        <option value="title">title</option>
+        <option value="date">date</option>
+      </select>
+    </label>
+    <label
+      >Only date:
+      <input
+        type="checkbox"
+        ng-change="changeCheckbox(onlyDate)"
+        ng-disabled="dataFilter.length === 0"
+        ng-model="onlyDate"
+    /></label>
+    <label
+      >Search:
+      <input type="text" ng-model="search" ng-change="searchValue(search)"
+    /></label>
+  </form>
+</div>
+
+<div class="items_container">
+  <div ng-show="dataFilter.length > 0">
+    <div
+      ng-click="setObjectParams(item)"
+      class="items"
+      ng-repeat="item in dataFilter"
+    >
+      <p>Title: {{item.title}}</p>
+      <p>
+        Date: {{onlyDate ? (item.date | date: 'dd.MM.yyyy') : (item.date | date:
+        'dd.MM.yyyy HH:mm') }}
+      </p>
+    </div>
+  </div>
+  <div ng-show="dataFilter.length === 0" class="ng-hide no-data">No Items</div>
+  <div class="add_new_item">
+    <form ng-submit="addNewTitle(newTitle)">
+      <label>New title: <input type="text" ng-model="newTitle" /></label>
+      <button type="submit" ng-disabled="!newTitle">Add</button>
+    </form>
+  </div>
+</div>

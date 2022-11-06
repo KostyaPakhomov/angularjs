@@ -1,0 +1,56 @@
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    tr {
+        &:first-child {
+            td {
+                border-top: 1px solid #AAAAAA;
+            }
+        }
+
+        td {
+            display: flex;
+            flex-direction: row;
+            padding: 5px 24px;
+            justify-content: space-between;
+
+            .row_text {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            border-bottom: 1px solid #AAAAAA;
+
+            .action_btns {
+                display: none;
+            }
+
+            &:hover {
+                background: #DDDDDD;
+
+                .action_btns {
+                    display: flex;
+                    flex-direction: row;
+
+                    button {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 0;
+                        background: #AAAAAA;
+                        margin-left: 12px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.add_new_item{
+    margin: 20px 30px;
+}

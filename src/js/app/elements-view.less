@@ -1,0 +1,36 @@
+@import "variables";
+
+elements-view {
+  display: block;
+}
+
+.elements-view__ctrls {
+  padding: 10px;
+  border-bottom: 1px solid @c-gray;
+}
+
+.elements_container {
+  width: 100%;
+
+  .button_container {
+    width: 100%;
+    display: flex;
+
+    button {
+      flex: 1 0 0;
+      margin: 24px;
+      box-sizing: border-box;
+      height: 40px;
+      background: #FFFFFF;
+      border: 2px solid #222222;
+      border-radius: 5px;
+
+      &:hover {
+        height: 40px;
+        background: #DDDDDD;
+        border: 2px solid #AAAAAA;
+        cursor: pointer;
+      }
+    }
+  }
+}

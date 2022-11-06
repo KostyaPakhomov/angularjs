@@ -1,0 +1,22 @@
+<div>
+  <div ng-show="selectedItemData.id">
+    <h3>Selected: {{selectedItemData.title}}</h3>
+    <table>
+      <tr ng-repeat="tag in selectedItemData.tags track by $index">
+        <td>
+          <div class="row_text">{{tag}}</div>
+          <span class="action_btns"
+            ><button type="button" ng-click="removeTag($index)">X</button></span
+          >
+        </td>
+      </tr>
+    </table>
+    <div class="add_new_item">
+      <form ng-submit="addNewTag(newTag)">
+        <label>New tag: <input type="text" ng-model="newTag" /></label>
+        <button type="submit" ng-disabled="!newTag">Add</button>
+      </form>
+    </div>
+  </div>
+  <div ng-show="!selectedItemData.id" class="ng-hide no-data">No Items</div>
+</div>

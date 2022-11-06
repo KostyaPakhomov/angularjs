@@ -1,0 +1,35 @@
+@import "variables";
+
+content-view {
+  display: block;
+  border-left: 1px solid @c-gray;
+}
+
+.items_container {
+  .items {
+    p {
+      margin: 0;
+    }
+
+    border-top: 1px solid #AAAAAA;
+
+    &:last-child {
+      border-bottom: 1px solid #AAAAAA;
+    }
+
+    &:hover {
+      background: #DDDDDD;
+      cursor: pointer;
+    }
+  }
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 2rem;
+  color: red
+}
+
+.content-view__ctrls {
+  padding: 15px;
+}

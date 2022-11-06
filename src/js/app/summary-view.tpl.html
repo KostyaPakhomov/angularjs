@@ -1,0 +1,12 @@
+Summary
+<div ng-show="data.length">
+  <div ng-repeat="value in data track by $index">
+    <div ng-if="data.length -1 === $index">
+      <div>Last: {{value.title}}</div>
+    </div>
+  </div>
+  <div ng-if="uniqueTags">
+    <div>Tags:</div>
+    <div>{{ uniqueTags }}</div>
+  </div>
+</div>
